@@ -16,8 +16,10 @@ syn match   alloySigDecl   /[A-Z][_0-9a-zA-Z']*/ contained nextgroup=alloyComma 
 syn match   alloyComma     /,/                   contained nextgroup=alloySigDecl skipwhite skipnl
 
 syn region alloyComment start="/\*" end="\*/"
+syn region alloyCommentLine start="//" end="$"
 
 hi def link alloyKeyword    Statement
+hi def link alloyCommentLine alloyComment
 hi def link alloyComment    Comment
 hi def link alloyConstant   Constant
 hi def link alloyOperator   Operator
